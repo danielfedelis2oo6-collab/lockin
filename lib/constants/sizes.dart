@@ -18,7 +18,7 @@ class UiSizes {
   static const double fontSizeLg = 18.0;
 
   // Button sizes
-  static const double buttonHeight = 18.0;
+  static const double buttonHeight = 24.0;
   static const double buttonRadius = 10.0;
   static const double buttonWidth = 130.0;
   static const double buttonElevation = 4.0;
@@ -30,6 +30,7 @@ class UiSizes {
   static const double imageThumbSize = 80.0;
 
   // Default spacing between sections
+  static const double authPadding = 18.0;
   static const double defaultSpace = 14.0;
   static const double spaceBtwItems = 16.0;
   static const double spaceBtwSections = 32.0;

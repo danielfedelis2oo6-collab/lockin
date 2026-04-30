@@ -15,7 +15,7 @@ class UiElevatedButtonTheme {
       side: const BorderSide(color: UiColors.dark),
       padding: const EdgeInsets.symmetric(vertical: UiSizes.buttonHeight),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(UiSizes.borderRadiusLg),
+        borderRadius: BorderRadius.circular(UiSizes.borderRadiusMd),
       ),
     ),
   );
@@ -29,7 +29,7 @@ class UiElevatedButtonTheme {
       side: const BorderSide(color: UiColors.white),
       padding: const EdgeInsets.symmetric(vertical: UiSizes.buttonHeight),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(UiSizes.borderRadiusLg),
+        borderRadius: BorderRadius.circular(UiSizes.borderRadiusMd),
       ),
     ),
   );

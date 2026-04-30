@@ -18,11 +18,11 @@ class UiTextTheme {
     ),
     displaySmall: GoogleFonts.montserratAlternates(
       fontSize: 24.0,
-      fontWeight: FontWeight.normal,
+      fontWeight: FontWeight.w600,
       color: UiColors.textPrimary,
     ),
     headlineLarge: GoogleFonts.montserratAlternates(
-      fontSize: 24.0,
+      fontSize: 32.0,
       fontWeight: FontWeight.w700,
       color: UiColors.textPrimary,
     ),

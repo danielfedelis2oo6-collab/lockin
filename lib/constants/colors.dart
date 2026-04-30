@@ -15,7 +15,7 @@ class UiColors {
   static const Color dashboardAppbarBackground = Color(0xFFFFFFFF);
 
   // Text colors
-  static const Color textPrimary = Color(0xFF4B4B4B);
+  static const Color textPrimary = Color(0xFF000000);
   static const Color textSecondary = Color(0xFF5D5D5D);
   static const Color textDarkPrimary = Color(0xFFFFFFFF);
   static const Color textDarkSecondary = Color(0xFFD3D3D3);
@@ -66,6 +66,7 @@ class UiColors {
   static const Color dark = Color(0xFF111111);
   static const Color darkerGrey = Color(0xFF333333);
   static const Color darkGrey = Color(0xFF242323);
+  static const Color darkGrey10 = Color(0xFF1E1E1E);
   static const Color grey = Color(0xFFEDEDED);
   static const Color grey10 = Color(0xFFCCCCCC);
   static const Color softGrey = Color(0xFFE6E6E6);
