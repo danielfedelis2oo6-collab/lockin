@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lockin/constants/sizes.dart';
 
-class MdRoundedCard extends StatelessWidget {
-  const MdRoundedCard({
+class RoundedCard extends StatelessWidget {
+  const RoundedCard({
     super.key,
     this.width = 120,
     this.height = 120,
     this.padding,
     this.border,
     this.onPressed,
-    this.borderRadius = UiSizes.md,
+    this.borderRadius = UiSizes.lg,
     this.applyCardRadius = true,
     this.fit = BoxFit.contain,
     this.backgroundColor = Colors.white,

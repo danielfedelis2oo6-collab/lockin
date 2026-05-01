@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:lockin/common/widgets/cards/md_rounded_card.dart';
+import 'package:lockin/common/widgets/cards/rounded_card.dart';
 import 'package:lockin/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/constants/sizes.dart';
@@ -35,7 +35,7 @@ class _VaultSliderState extends State<VaultSlider> {
           ),
           items: widget.contents
               .map(
-                (cardContent) => MdRoundedCard(
+                (cardContent) => RoundedCard(
                   cardContents: cardContent,
                   height: 200,
                   width: double.infinity,
