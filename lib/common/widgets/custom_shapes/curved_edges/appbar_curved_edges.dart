@@ -4,32 +4,27 @@ class AppbarCurvedEdges extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     var path = Path();
-    path.lineTo(0, size.height);
-    final firstCurve = Offset(0, size.height - 20);
-    final lastCurve = Offset(30, size.height - 20);
+    path.lineTo(0, size.height - 20);
+    // 1. The start of the bulge (Left Corner)
+    // Control point is at the absolute bottom-left (0, height)
+    path.quadraticBezierTo(0, size.height, 30, size.height);
+
+    // 2. The middle span (Pulling the center down)
+    // Control point is at the bottom-center
     path.quadraticBezierTo(
-      firstCurve.dx,
-      firstCurve.dy,
-      lastCurve.dx,
-      lastCurve.dy,
+      size.width / 2,
+      size.height,
+      size.width - 30,
+      size.height,
     );
 
-    final secondFirstCurve = Offset(0, size.height - 20);
-    final secondLastCurve = Offset(size.width - 30, size.height - 20);
+    // 3. The end of the bulge (Right Corner)
+    // Control point is at the absolute bottom-right (width, height)
     path.quadraticBezierTo(
-      secondFirstCurve.dx,
-      secondFirstCurve.dy,
-      secondLastCurve.dx,
-      secondLastCurve.dy,
-    );
-
-    final thirdFirstCurve = Offset(size.width, size.height - 20);
-    final thirdLastCurve = Offset(size.width, size.height);
-    path.quadraticBezierTo(
-      thirdFirstCurve.dx,
-      thirdFirstCurve.dy,
-      thirdLastCurve.dx,
-      thirdLastCurve.dy,
+      size.width,
+      size.height,
+      size.width,
+      size.height - 20,
     );
 
     path.lineTo(size.width, 0);
