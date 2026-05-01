@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lockin/common/widgets/buttons/link_button_with_label.dart';
 import 'package:lockin/constants/sizes.dart';
 import 'package:lockin/routing/routes.dart';
