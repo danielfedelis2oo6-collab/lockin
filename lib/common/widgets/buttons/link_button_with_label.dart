@@ -21,7 +21,7 @@ class LinkButtonWithLabel extends StatelessWidget {
       children: [
         Text(labelTexts),
         TextButton(
-          onPressed: () => context.push(route),
+          onPressed: () => context.pushReplacement(route),
           style: TextButton.styleFrom(
             textStyle: const TextStyle(fontSize: UiSizes.fontSizeSm),
           ),

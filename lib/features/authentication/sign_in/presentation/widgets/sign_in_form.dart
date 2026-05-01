@@ -25,16 +25,16 @@ class SignInForm extends StatelessWidget {
 
           const SizedBox(height: UiSizes.spaceBtwInputFields * 2),
 
-          ///sign Up button
+          ///sign In button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => context.push(AppRoutes),
+              onPressed: () => context.push(AppRoutes.vault),
               child: Text("Sign In"),
             ),
           ),
 
-          ///Log In Button
+          /// Go to Sign Up Button
           LinkButtonWithLabel(
             labelTexts: "Don't have an account?",
             buttonTexts: "Sign Up",
