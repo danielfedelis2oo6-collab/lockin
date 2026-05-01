@@ -17,9 +17,9 @@ class PrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return UiCurvedEdgesWidget(
       child: Container(
-        color: isdark ? UiColors.darkGrey10 : UiColors.darkGrey20,
+        color: isdark ? UiColors.darkGrey10 : UiColors.grey10,
         padding: const EdgeInsets.all(0),
-        child: SizedBox(width: double.infinity, height: 480, child: child),
+        child: SizedBox(width: double.infinity, height: 390, child: child),
       ),
     );
   }

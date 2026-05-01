@@ -37,8 +37,8 @@ class _VaultSliderState extends State<VaultSlider> {
               .map(
                 (cardContent) => MdRoundedCard(
                   cardContents: cardContent,
-                  width: double.infinity,
                   height: 200,
+                  width: double.infinity,
                 ),
               )
               .toList(),
@@ -51,8 +51,8 @@ class _VaultSliderState extends State<VaultSlider> {
             children: [
               for (int i = 0; i < widget.contents.length; i++)
                 OycirculerContainer(
-                  width: 16,
-                  height: 4,
+                  width: 8,
+                  height: 8,
                   margin: EdgeInsets.only(right: UiSizes.sm),
                   backgroundColor: isDark
                       ? currentIndex == i

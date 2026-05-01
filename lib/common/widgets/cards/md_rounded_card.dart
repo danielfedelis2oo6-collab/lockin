@@ -4,8 +4,8 @@ import 'package:lockin/constants/sizes.dart';
 class MdRoundedCard extends StatelessWidget {
   const MdRoundedCard({
     super.key,
-    this.width = 150,
-    this.height = 150,
+    this.width = 120,
+    this.height = 120,
     this.padding,
     this.border,
     this.onPressed,
@@ -32,6 +32,7 @@ class MdRoundedCard extends StatelessWidget {
         width: width,
         height: height,
         padding: padding,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           border: border,
           color: backgroundColor,
