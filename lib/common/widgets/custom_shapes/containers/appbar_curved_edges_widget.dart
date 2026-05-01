@@ -8,6 +8,6 @@ class AppBarCurvedEdgesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(clipper: AppBarCurvedEdges(), child: child);
+    return ClipPath(clipper: AppbarCurvedEdges(), child: child);
   }
 }
