@@ -67,6 +67,7 @@ class UiColors {
   static const Color darkerGrey = Color(0xFF333333);
   static const Color darkGrey = Color(0xFF242323);
   static const Color darkGrey10 = Color(0xFF1E1E1E);
+  static const Color darkGrey20 = Color(0xFFBEBEBE);
   static const Color grey = Color(0xFFEDEDED);
   static const Color grey10 = Color(0xFFCCCCCC);
   static const Color softGrey = Color(0xFFE6E6E6);

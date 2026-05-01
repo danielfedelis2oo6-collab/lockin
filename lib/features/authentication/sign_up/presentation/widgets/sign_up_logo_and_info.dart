@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lockin/constants/image_strings.dart';
 import 'package:lockin/constants/sizes.dart';
-import 'package:lockin/utils/theme/helpers/helper_functions.dart';
+import 'package:lockin/utils/helpers/helper_functions.dart';
 
 class SignUpLogoAndInfo extends StatelessWidget {
   const SignUpLogoAndInfo({super.key});

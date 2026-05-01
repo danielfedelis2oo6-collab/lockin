@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/navigation/domain/navigation_bar_destination.dart';
-import 'package:lockin/utils/theme/helpers/helper_functions.dart';
+import 'package:lockin/utils/helpers/helper_functions.dart';
 
 class NavigationMainWrapper extends StatelessWidget {
   const NavigationMainWrapper({super.key, required this.navigationShell});
