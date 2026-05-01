@@ -5,6 +5,6 @@ class VaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(body: SafeArea(child: Text("Vault Screen")));
   }
 }

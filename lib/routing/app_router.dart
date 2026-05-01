@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lockin/features/authentication/sign_in/presentation/pages/sign_in_screen.dart';
 import 'package:lockin/features/authentication/sign_up/presentation/pages/sign_up_screen.dart';
+import 'package:lockin/features/manage_password/presentation/pages/manage_password_screen.dart';
+import 'package:lockin/features/personalization/presentation/pages/main_settings_screen.dart';
 import 'package:lockin/features/vault/presentation/pages/vault_screen.dart';
 import 'package:lockin/navigation/navigation_main_wrapper.dart';
 import 'package:lockin/routing/routes.dart';
@@ -38,7 +40,7 @@ final goRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoutes.managePasswords,
-              builder: (context, state) => const VaultScreen(),
+              builder: (context, state) => const ManagePasswordScreen(),
             ),
           ],
         ),
@@ -46,7 +48,7 @@ final goRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoutes.settings,
-              builder: (context, state) => const VaultScreen(),
+              builder: (context, state) => const MainSettingsScreen(),
             ),
           ],
         ),
