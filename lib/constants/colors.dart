@@ -41,7 +41,7 @@ class UiColors {
   static const Color buttonDisabled = disabledBackgroundLight;
 
   // Icon colors
-  static const Color iconPrimaryLight = Color(0xFF111111);
+  static const Color iconPrimaryLight = Color(0xFF000000);
   static const Color iconSecondaryLight = Color(0xFF666666);
   static const Color iconPrimaryDark = Color(0xFFFFFFFF);
   static const Color iconSecondaryDark = Color(0xFFAAAAAA);

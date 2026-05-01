@@ -19,7 +19,7 @@ class SearchContainer extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    final bool isdark = HelperFunctions.isDarkMode(context);
+    final bool isDark = HelperFunctions.isDarkMode(context);
 
     return GestureDetector(
       onTap: onTap,
@@ -29,13 +29,15 @@ class SearchContainer extends StatelessWidget {
           width: GeneralDeviceUtils.getScreenWidth(context),
           padding: EdgeInsets.all(UiSizes.md),
           decoration: BoxDecoration(
-            color: showBackground ? UiColors.textDarkPrimary : null,
-            borderRadius: BorderRadius.circular(UiSizes.cardRadiusLg),
-            border: showBorder ? Border.all(color: UiColors.grey) : null,
+            color: isDark ? UiColors.darkGrey10 : UiColors.grey,
+            borderRadius: BorderRadius.circular(100),
           ),
           child: Row(
             children: [
-              Icon(icon, color: isdark ? UiColors.darkerGrey : UiColors.grey),
+              Icon(
+                icon,
+                color: isDark ? UiColors.textDarkPrimary : UiColors.textPrimary,
+              ),
 
               //horizontal spacing
               const SizedBox(width: UiSizes.spaceBtwItems),

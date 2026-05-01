@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lockin/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:lockin/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/constants/sizes.dart';
+import 'package:lockin/features/vault/presentation/widgets/custom_vault_appbar.dart';
+import 'package:lockin/features/vault/presentation/widgets/vault_slider.dart';
 import 'package:lockin/utils/helpers/helper_functions.dart';
 
 class VaultScreen extends StatelessWidget {
@@ -19,82 +22,18 @@ class VaultScreen extends StatelessWidget {
                 isdark: isDark,
                 child: Column(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                      child: Container(
-                        color: UiColors.primaryBackground,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 10,
-                        ),
-                        height: 100,
-                        width: double.infinity,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(UiSizes.md),
-                                  decoration: BoxDecoration(
-                                    color: UiColors.grey,
-                                    borderRadius: BorderRadius.circular(100),
-                                  ),
-                                  child: Text(
-                                    "FE",
-                                    style: Theme.of(
-                                      context,
-                                    ).textTheme.headlineSmall,
-                                  ),
-                                ),
-                                const SizedBox(width: UiSizes.md),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Franklin Emmanuel",
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.headlineSmall,
-                                    ),
-                                    Text(
-                                      "Welcome back",
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.bodyMedium,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.menu,
-                                color: isDark ? UiColors.white : UiColors.dark,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Text(
-                      "Store, manage and secure all your password in one secure vault.",
+                    CustomVaultAppBar(isDark: isDark),
+                    Padding(
+                      padding: EdgeInsetsGeometry.all(UiSizes.defaultSpace),
+                      child: VaultSlider(contents: ["1", "2", "3"]),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(height: UiSizes.spaceBtwSections),
-
               const SizedBox(height: UiSizes.spaceBtwItems),
+
+              SearchContainer(text: "Search account, name"),
             ],
           ),
         ),
