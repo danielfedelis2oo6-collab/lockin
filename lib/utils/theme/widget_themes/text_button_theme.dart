@@ -11,8 +11,8 @@ class UiTextButtonTheme {
     style: TextButton.styleFrom(
       foregroundColor: UiColors.dark, // text & icon color
       padding: const EdgeInsets.symmetric(
-        vertical: UiSizes.buttonHeight,
-        horizontal: UiSizes.md,
+        vertical: UiSizes.textButtonHeight,
+        horizontal: UiSizes.sm,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(UiSizes.borderRadiusLg),
@@ -25,7 +25,7 @@ class UiTextButtonTheme {
     style: TextButton.styleFrom(
       foregroundColor: UiColors.white, // text & icon color
       padding: const EdgeInsets.symmetric(
-        vertical: UiSizes.buttonHeight,
+        vertical: UiSizes.textButtonHeight,
         horizontal: UiSizes.md,
       ),
       shape: RoundedRectangleBorder(

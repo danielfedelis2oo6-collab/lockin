@@ -17,6 +17,8 @@ class SignUpScreen extends StatelessWidget {
               children: [
                 //logo and title
                 const SignUpLogoAndInfo(),
+
+                /// seperator
                 const SizedBox(height: UiSizes.spaceBtwSections),
 
                 /// sign up form field

@@ -4,8 +4,8 @@ import 'package:lockin/common/widgets/buttons/link_button_with_label.dart';
 import 'package:lockin/constants/sizes.dart';
 import 'package:lockin/routing/routes.dart';
 
-class SignUpForm extends StatelessWidget {
-  const SignUpForm({super.key});
+class SignInForm extends StatelessWidget {
+  const SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,22 +15,12 @@ class SignUpForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFormField(
-            decoration: const InputDecoration(labelText: "User Name"),
+            decoration: const InputDecoration(labelText: "User Name or Email"),
           ),
-          const SizedBox(height: UiSizes.spaceBtwInputFields),
-
-          TextFormField(decoration: const InputDecoration(labelText: "Email")),
-
           const SizedBox(height: UiSizes.spaceBtwInputFields),
 
           TextFormField(
             decoration: const InputDecoration(labelText: "Password"),
-          ),
-
-          const SizedBox(height: UiSizes.spaceBtwInputFields),
-
-          TextFormField(
-            decoration: const InputDecoration(labelText: "Confirm Password"),
           ),
 
           const SizedBox(height: UiSizes.spaceBtwInputFields * 2),
@@ -38,14 +28,17 @@ class SignUpForm extends StatelessWidget {
           ///sign Up button
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(onPressed: () {}, child: Text("Sign Up")),
+            child: ElevatedButton(
+              onPressed: () => context.push(AppRoutes),
+              child: Text("Sign In"),
+            ),
           ),
 
           ///Log In Button
           LinkButtonWithLabel(
-            labelTexts: "Already have an account?",
-            buttonTexts: "Sign In",
-            route: AppRoutes.signIn,
+            labelTexts: "Don't have an account?",
+            buttonTexts: "Sign Up",
+            route: AppRoutes.signUp,
           ),
         ],
       ),

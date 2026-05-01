@@ -1,36 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:lockin/constants/image_strings.dart';
-import 'package:lockin/constants/sizes.dart';
 import 'package:lockin/utils/theme/helpers/helper_functions.dart';
 
-class SignUpLogoAndInfo extends StatelessWidget {
-  const SignUpLogoAndInfo({super.key});
+class SignInLogoAndInfo extends StatelessWidget {
+  const SignInLogoAndInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
     final isDark = HelperFunctions.isDarkMode(context);
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 140,
+          height: 210,
           width: double.infinity,
-          alignment: Alignment.centerRight,
+          alignment: Alignment.center,
           child: Image(
             image: AssetImage(
               isDark ? ImageStrings.mainLogoLight : ImageStrings.mainLogoDark,
             ),
-            width: 80,
-            height: 80,
+            width: 136,
+            height: 69,
             fit: BoxFit.contain,
           ),
         ),
+        Text("Welcome back", style: Theme.of(context).textTheme.headlineLarge),
+        const SizedBox(height: 6),
         Text(
-          "Create account",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
-        Text(
-          "Fill the following field to continue",
+          "Sign in to continue",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ],
