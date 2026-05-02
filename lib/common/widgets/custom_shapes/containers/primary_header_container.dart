@@ -19,7 +19,9 @@ class PrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: isdark ? UiColors.darkGrey10 : UiColors.grey10,
         padding: const EdgeInsets.all(0),
-        child: SizedBox(width: double.infinity, height: 390, child: child),
+        child: IntrinsicHeight(
+          child: SizedBox(width: double.infinity, child: child),
+        ),
       ),
     );
   }

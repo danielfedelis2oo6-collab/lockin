@@ -2,73 +2,125 @@ import 'package:flutter/material.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/constants/sizes.dart';
 
+// ---------------------------------------------------------------------------
+// CustomVaultAppBar
+//
+// Matches the design: white/dark card with rounded bottom corners, subtle
+// drop-shadow, avatar badge, name + greeting, and a hamburger icon.
+//
+// Shadow is intentionally soft (low alpha, low spread) so it reads as a
+// "floating card" effect without being heavy.
+// ---------------------------------------------------------------------------
+
 class CustomVaultAppBar extends StatelessWidget {
-  const CustomVaultAppBar({super.key, required this.isDark});
+  const CustomVaultAppBar({
+    super.key,
+    required this.isDark,
+
+    /// Initials shown in the avatar badge.  Replace with a real avatar widget.
+    this.initials = 'FE',
+    this.userName = 'Franklin Emmanuel',
+    this.greeting = 'Welcome back',
+    this.onMenuTap,
+  });
 
   final bool isDark;
+  final String initials;
+  final String userName;
+  final String greeting;
+  final VoidCallback? onMenuTap;
 
   @override
   Widget build(BuildContext context) {
+    // Background: always the opposite of the page so the card "pops"
+    final Color cardBg = isDark ? UiColors.darkGrey : UiColors.white;
+    final Color textColor = isDark
+        ? UiColors.textDarkPrimary
+        : UiColors.textPrimary;
+    final Color subtitleColor = isDark
+        ? UiColors.textDarkSecondary
+        : UiColors.textSecondary;
+    final Color avatarBg = isDark
+        ? UiColors.darkerGrey
+        : UiColors.lightContainer;
+
     return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(
+        horizontal: UiSizes.defaultSpace,
+        vertical: UiSizes.sm + 4,
+      ),
       decoration: BoxDecoration(
-        color: UiColors.primaryBackground,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(24),
-          bottomRight: Radius.circular(24),
+        color: cardBg,
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(UiSizes.cardRadiusLg + 4),
+          bottomRight: Radius.circular(UiSizes.cardRadiusLg + 4),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withAlpha(60),
-            blurRadius: 4,
-            spreadRadius: 2,
-            offset: Offset(0, 4),
+            // Subtle: low alpha (30 / 255 ≈ 12 %), small blur, zero spread
+            color: Colors.black.withAlpha(30),
+            blurRadius: 8,
+            spreadRadius: 0,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      height: 100,
-      width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // ── Avatar + name ───────────────────────────────────────────
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // Avatar badge
               Container(
-                padding: EdgeInsets.all(UiSizes.md),
+                width: 44,
+                height: 44,
                 decoration: BoxDecoration(
-                  color: UiColors.grey,
-                  borderRadius: BorderRadius.circular(100),
+                  color: avatarBg,
+                  shape: BoxShape.circle,
                 ),
+                alignment: Alignment.center,
                 child: Text(
-                  "FE",
-                  style: Theme.of(context).textTheme.headlineSmall,
+                  initials,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: textColor,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
-              const SizedBox(width: UiSizes.md),
+              const SizedBox(width: UiSizes.sm),
+              // Name + greeting
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Franklin Emmanuel",
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    userName,
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      color: textColor,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   Text(
-                    "Welcome back",
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    greeting,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(color: subtitleColor),
                   ),
                 ],
               ),
             ],
           ),
+
+          // ── Hamburger menu ──────────────────────────────────────────
           IconButton(
-            onPressed: () {},
+            onPressed: onMenuTap ?? () {},
             icon: Icon(
-              Icons.menu,
-              color: isDark ? UiColors.white : UiColors.dark,
+              Icons.menu_rounded,
+              color: isDark
+                  ? UiColors.iconPrimaryDark
+                  : UiColors.iconPrimaryLight,
             ),
           ),
         ],
