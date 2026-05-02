@@ -2,15 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/constants/sizes.dart';
 
-/// Displays a coloured progress bar representing password health.
-///
-/// [healthFraction] – value from 0.0 (worst) to 1.0 (best).
-/// [label]          – text shown on the right (e.g. "80% Safe").
-///
-/// The bar colour automatically transitions:
-///   ≤ 0.33  → red    (poor)
-///   ≤ 0.66  → orange (moderate)
-///   > 0.66  → green  (good)
 class PasswordHealthBar extends StatelessWidget {
   const PasswordHealthBar({
     super.key,

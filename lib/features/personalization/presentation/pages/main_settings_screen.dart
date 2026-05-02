@@ -62,9 +62,6 @@ class _SettingsAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-// Section widgets
-// Each section is a standalone widget → easy to locate and edit.
-
 /// "Settings hub" section.
 Widget _SettingsHubSection(BuildContext context) {
   return SettingsSection(
