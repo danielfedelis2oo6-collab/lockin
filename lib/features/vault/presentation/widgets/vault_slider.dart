@@ -50,48 +50,43 @@ class _VaultSliderState extends State<VaultSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: UiSizes.defaultSpace),
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          // ── Hero carousel (background) ──────────────────────────────
-          CarouselSlider(
-            options: CarouselOptions(
-              height: widget.slideHeight,
-              viewportFraction: 1.0,
-              enlargeCenterPage: false,
-              onPageChanged: (index, _) => _currentIndex.value = index,
-            ),
-            items: widget.contents
-                .map((text) => _SlideCard(text: text))
-                .toList(),
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        // ── Hero carousel (background) ──────────────────────────────
+        CarouselSlider(
+          options: CarouselOptions(
+            height: widget.slideHeight,
+            viewportFraction: 1.0,
+            enlargeCenterPage: false,
+            onPageChanged: (index, _) => _currentIndex.value = index,
           ),
+          items: widget.contents.map((text) => _SlideCard(text: text)).toList(),
+        ),
 
-          // ── Dot indicator overlay (foreground) ──────────────────────
-          Positioned(
-            bottom: UiSizes.sm,
-            child: ValueListenableBuilder<int>(
-              valueListenable: _currentIndex,
-              builder: (_, currentIndex, __) => Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (int i = 0; i < widget.contents.length; i++)
-                    OycirculerContainer(
-                      width: currentIndex == i ? 20 : 8,
-                      height: 6,
-                      radius: 100,
-                      margin: const EdgeInsets.only(right: UiSizes.xs),
-                      backgroundColor: currentIndex == i
-                          ? UiColors.white
-                          : UiColors.white.withAlpha(90),
-                    ),
-                ],
-              ),
+        // ── Dot indicator overlay (foreground) ──────────────────────
+        Positioned(
+          bottom: UiSizes.sm,
+          child: ValueListenableBuilder<int>(
+            valueListenable: _currentIndex,
+            builder: (_, currentIndex, __) => Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                for (int i = 0; i < widget.contents.length; i++)
+                  OycirculerContainer(
+                    width: currentIndex == i ? 20 : 8,
+                    height: 6,
+                    radius: 100,
+                    margin: const EdgeInsets.only(right: UiSizes.xs),
+                    backgroundColor: currentIndex == i
+                        ? UiColors.white
+                        : UiColors.white.withAlpha(90),
+                  ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

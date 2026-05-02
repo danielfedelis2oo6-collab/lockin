@@ -27,6 +27,7 @@ class VaultScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomVaultAppBar(isDark: isDark),
+                    const SizedBox(height: UiSizes.spaceBtwItems),
                     VaultSlider(
                       contents: [
                         'Store, manage and secure all your\npassword in one secure vault.',
