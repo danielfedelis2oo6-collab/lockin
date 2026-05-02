@@ -8,32 +8,6 @@ import 'package:lockin/features/vault/presentation/widgets/vault_item_tile.dart'
 import 'package:lockin/features/vault/presentation/widgets/vault_slider.dart';
 import 'package:lockin/utils/helpers/helper_functions.dart';
 
-// ---------------------------------------------------------------------------
-// VaultScreen
-//
-// Layout
-// ──────
-//   Scaffold
-//   └─ SafeArea
-//      └─ SingleChildScrollView
-//         └─ Column
-//            ├─ PrimaryHeaderContainer
-//            │    ├─ CustomVaultAppBar      ← existing app bar widget (kept)
-//            │    └─ VaultSlider            ← existing slider (kept)
-//            ├─ _SearchRow                  ← existing SearchContainer
-//            ├─ _AutoFillBanner             ← "Not secured enough?" dark pill
-//            ├─ _VaultTabBar               ← "Recent Updates" | "All passwords"
-//            └─ _VaultItemList             ← list of VaultItemTile rows
-//
-// How to add a vault entry
-// ────────────────────────
-// Add a [_VaultEntry] model to [_sampleEntries] in [_VaultItemList].
-//
-// How to add a slider slide
-// ─────────────────────────
-// Expand [VaultSlider(contents: [...])] in the build method below.
-// ---------------------------------------------------------------------------
-
 class VaultScreen extends StatelessWidget {
   const VaultScreen({super.key});
 
@@ -47,7 +21,7 @@ class VaultScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // ── Header (appbar + hero slider) ────────────────────────
+              // appbar and hero slider ────────────────────────
               PrimaryHeaderContainer(
                 isdark: isDark,
                 child: Column(
