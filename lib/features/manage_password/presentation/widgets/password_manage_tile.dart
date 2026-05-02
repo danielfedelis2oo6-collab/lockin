@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/constants/sizes.dart';
 
-/// A single row inside the "Manage Password" section.
-///
-/// Each tile shows:
-///  - A circular icon badge (dark background)
-///  - A [title] and [subtitle] describing the category
-///  - A trailing chevron
-///
-/// Set [isDestructive] to `true` for danger-level items.
 class PasswordManageTile extends StatelessWidget {
   const PasswordManageTile({
     super.key,
@@ -30,12 +22,9 @@ class PasswordManageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Card background adapts to theme
     final Color cardBg = isDark
         ? UiColors.darkContainer
         : UiColors.lightContainer;
-
-    // Icon badge is always a solid dark circle (matches the design)
     final Color badgeBg = isDark ? UiColors.darkerGrey : UiColors.dark;
     final Color badgeIcon = UiColors.white;
 

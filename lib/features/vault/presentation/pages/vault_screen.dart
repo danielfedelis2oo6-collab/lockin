@@ -71,9 +71,7 @@ class VaultScreen extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
 // Auto-fill banner
-// ---------------------------------------------------------------------------
 
 class _AutoFillBanner extends StatelessWidget {
   const _AutoFillBanner({required this.isDark, this.onTap});

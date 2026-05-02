@@ -3,33 +3,6 @@ import 'package:lockin/constants/sizes.dart';
 import 'package:lockin/features/personalization/presentation/widgets/settings_section.dart';
 import 'package:lockin/features/personalization/presentation/widgets/settings_tile.dart';
 
-// ---------------------------------------------------------------------------
-// MainSettingsScreen
-//
-// Structure
-// ─────────
-//   Scaffold
-//   └─ SafeArea
-//      └─ SingleChildScrollView
-//         └─ Padding (horizontal gutters)
-//            └─ Column
-//               ├─ _SettingsHubSection
-//               ├─ _SupportsAndFaqsSection
-//               ├─ _AccountManagementSection
-//               └─ _AppSection
-//
-// How to add a new section
-// ────────────────────────
-// 1. Create a private widget (e.g. `_MyNewSection`) that returns a
-//    [SettingsSection] with the tiles you need.
-// 2. Add it to the [_buildSections] list below.
-//
-// How to add a tile to an existing section
-// ─────────────────────────────────────────
-// Open the corresponding private section widget and add another
-// [SettingsTile] to its `children` list.
-// ---------------------------------------------------------------------------
-
 class MainSettingsScreen extends StatelessWidget {
   const MainSettingsScreen({super.key});
 
@@ -89,10 +62,8 @@ class _SettingsAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
 // Section widgets
 // Each section is a standalone widget → easy to locate and edit.
-// ---------------------------------------------------------------------------
 
 /// "Settings hub" section.
 Widget _SettingsHubSection(BuildContext context) {

@@ -4,31 +4,6 @@ import 'package:lockin/constants/sizes.dart';
 import 'package:lockin/features/manage_password/presentation/widgets/password_health_bar.dart';
 import 'package:lockin/features/manage_password/presentation/widgets/password_manage_tile.dart';
 
-// ---------------------------------------------------------------------------
-// ManagePasswordScreen
-//
-// Layout
-// ──────
-//   Scaffold
-//   └─ SafeArea
-//      └─ SingleChildScrollView
-//         └─ Padding
-//            └─ Column
-//               ├─ _NewPasswordCard        ← dark card with input + add button
-//               ├─ _PasswordHealthSection  ← labelled progress bar
-//               └─ _ManagePasswordSection  ← list of PasswordManageTile rows
-//
-// How to add a new manage-password category
-// ─────────────────────────────────────────
-// Open _ManagePasswordSection and add another [PasswordManageTile] to the
-// `_tiles` list. No other files need to change.
-//
-// How to adjust password health
-// ─────────────────────────────
-// Pass a different `healthFraction` (0.0–1.0) and `label` to
-// [PasswordHealthBar] inside _PasswordHealthSection.
-// ---------------------------------------------------------------------------
-
 class ManagePasswordScreen extends StatelessWidget {
   const ManagePasswordScreen({super.key});
 
@@ -79,9 +54,7 @@ class _ManagePasswordAppBar extends StatelessWidget
   }
 }
 
-// ---------------------------------------------------------------------------
 // Section widgets
-// ---------------------------------------------------------------------------
 
 /// Dark card at the top: password text field + generate + add button.
 Widget _NewPasswordCard(BuildContext context) {
