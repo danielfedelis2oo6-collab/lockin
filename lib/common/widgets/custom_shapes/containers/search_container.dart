@@ -27,7 +27,7 @@ class SearchContainer extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: UiSizes.defaultSpace),
         child: Container(
           width: GeneralDeviceUtils.getScreenWidth(context),
-          padding: EdgeInsets.all(UiSizes.md),
+          padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: isDark ? UiColors.darkGrey10 : UiColors.grey,
             borderRadius: BorderRadius.circular(100),

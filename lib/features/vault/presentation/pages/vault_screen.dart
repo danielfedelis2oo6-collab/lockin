@@ -23,10 +23,7 @@ class VaultScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomVaultAppBar(isDark: isDark),
-                    Padding(
-                      padding: EdgeInsetsGeometry.all(UiSizes.defaultSpace),
-                      child: VaultSlider(contents: ["1", "2", "3"]),
-                    ),
+                    VaultSlider(contents: ["1", "2", "3"]),
                   ],
                 ),
               ),
@@ -34,6 +31,33 @@ class VaultScreen extends StatelessWidget {
               const SizedBox(height: UiSizes.spaceBtwItems),
 
               SearchContainer(text: "Search account, name"),
+
+              const SizedBox(height: UiSizes.spaceBtwItems / 2),
+              Padding(
+                padding: const EdgeInsets.all(UiSizes.defaultSpace),
+                child: Container(
+                  padding: EdgeInsets.all(UiSizes.md),
+                  decoration: BoxDecoration(
+                    color: UiColors.grey,
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.workspaces),
+                          const SizedBox(width: UiSizes.sm),
+                          Text("Not secured enough? try auto-fill"),
+                        ],
+                      ),
+                      Icon(Icons.arrow_forward),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

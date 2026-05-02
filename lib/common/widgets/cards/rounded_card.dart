@@ -32,6 +32,7 @@ class RoundedCard extends StatelessWidget {
         width: width,
         height: height,
         padding: padding,
+        margin: EdgeInsets.only(right: UiSizes.sm),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           border: border,
