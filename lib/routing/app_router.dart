@@ -39,7 +39,7 @@ final goRouter = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: AppRoutes.managePasswords,
+              path: AppRoutes.passwords,
               builder: (context, state) => const ManagePasswordScreen(),
             ),
           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lockin/common/widgets/svg.dart';
 import 'package:lockin/constants/colors.dart';
 import 'package:lockin/navigation/domain/navigation_bar_destination.dart';
 import 'package:lockin/utils/helpers/helper_functions.dart';
@@ -20,7 +21,10 @@ class NavigationMainWrapper extends StatelessWidget {
         destinations: destinations
             .map(
               (destination) => NavigationDestination(
-                icon: Icon(destination.icon),
+                icon: UiSvg(
+                  path: 'assets/icons/${destination.icon}.svg',
+                  color: isDark ? UiColors.white : UiColors.black,
+                ),
                 label: destination.label,
               ),
             )
